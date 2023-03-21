@@ -1,15 +1,19 @@
 import React from 'react';
+import { Link, useParams } from 'react-router-dom';
 import {useGetProductQuery} from "../redux/product";
 
 const Card = () => {
 
     const {data=[]} = useGetProductQuery()
-    console.log(data)
+    
+    
     return (
         data.map((el)=>(
             <div className='card'>
-
-                <img src={el.image} alt=""/>
+                <Link to={`/singleCard/${el.id}`}>
+                    <img src={el.image} alt=""/>
+                </Link>
+                
                 <h2>{el.price}</h2>
                 <h2>{el.title}</h2>
             </div>

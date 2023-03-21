@@ -1,53 +1,62 @@
-import React from 'react';
-import {useChangeProductMutation, useGetOneProductQuery} from "../redux/product";
-import {useLocation} from "react-router-dom";
-import {useForm} from "react-hook-form";
+import React, { useEffect } from 'react';
+import { useChangeProductMutation, useGetOneProductQuery } from "../redux/product";
+import { useLocation } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const OneProduct = () => {
     const [changeProduct] = useChangeProductMutation()
 
-    const {pathname} = useLocation()
+    const { pathname } = useLocation()
 
     let num = pathname.split('/').at(-1)
-    const {data=[]} = useGetOneProductQuery(num)
+    const { data = [] } = useGetOneProductQuery(num)
 
 
-    const{
+    const {
         register,
         reset,
         handleSubmit,
-        formState:{
+        formState: {
             errors
         }
 
-    }=useForm({mode:'onBlur'})
+    } = useForm({ mode: 'onBlur' })
 
-    const postProduct = (product)=>{
-        changeProduct({...data,...product})
-        console.log(changeProduct({...data,...product}))
+    const postProduct = (product) => {
+        changeProduct({ ...data, ...product })
+        console.log(changeProduct({ ...data, ...product }))
     }
 
+
     return (
-        <div className='oneProduct'>
-            <h2>изменение одного продукта</h2>
-            <form noValidate onSubmit={handleSubmit(postProduct)}>
-                <input {...register('price',{
-                    required:{
-                        message:'заполните это поле price',
-                        value:true
-                    }
-                })}
-                    defaultValue={data.price} type="text" placeholder='изменить цену'/>
-                <input {...register('title',{
-                    required:{
-                        message:'заполните это поле title',
-                        value:true
-                    }
-                })}
-                    defaultValue={data.title} type="text" placeholder='изменить название'/>
-                <button type='submit'>отправить</button>
-            </form>
-        </div>
+        <>
+            <div className='Item'>
+                <img src={`/${data.image}`}/>
+                <p>{data.title}</p>
+                <p>{data.price}</p>
+            </div>
+            <div className='oneProduct'>
+                <h2>изменение одного продукта</h2>
+                <form noValidate onSubmit={handleSubmit(postProduct)}>
+                    <input {...register('price', {
+                        required: {
+                            message: 'заполните это поле price',
+                            value: true
+                        }
+                    })}
+                        defaultValue={data.price} type="text" placeholder='изменить цену' />
+                    <input {...register('title', {
+                        required: {
+                            message: 'заполните это поле title',
+                            value: true
+                        }
+                    })}
+                        defaultValue={data.title} type="text" placeholder='изменить название' />
+                    <button type='submit'>отправить</button>
+                </form>
+            </div>
+        </>
+
     );
 };
 
