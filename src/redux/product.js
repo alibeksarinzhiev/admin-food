@@ -16,10 +16,17 @@ export const productSlice = createApi({
                 body:product
             })
         }),
-        // addproduct
+        addProduct:build.mutation({
+            query:(produdct)=>({
+                url:`product`,
+                method:'POST',
+                body:produdct
+            })
+        }),
+
         getOneProduct:build.query({
             query:(id)=> ({url:`product/${id}`})
         })
     })
 })
-export const {useGetProductQuery,useChangeProductMutation,useGetOneProductQuery} = productSlice
+export const {useGetProductQuery,useChangeProductMutation,useGetOneProductQuery,useAddProductMutation} = productSlice

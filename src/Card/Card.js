@@ -1,7 +1,9 @@
 import React from 'react';
-import {useGetProductQuery} from "../redux/product";
+import { useGetProductQuery} from "../redux/product";
 
 const Card = () => {
+
+
 
     const {data=[]} = useGetProductQuery()
     console.log(data)
@@ -12,6 +14,7 @@ const Card = () => {
                 <img src={el.image} alt=""/>
                 <h2>{el.price}</h2>
                 <h2>{el.title}</h2>
+
             </div>
         ))
 

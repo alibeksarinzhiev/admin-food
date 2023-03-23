@@ -12,6 +12,8 @@ const OneProduct = () => {
     const {data=[]} = useGetOneProductQuery(num)
 
 
+
+
     const{
         register,
         reset,
@@ -47,6 +49,7 @@ const OneProduct = () => {
                     defaultValue={data.title} type="text" placeholder='изменить название'/>
                 <button type='submit'>отправить</button>
             </form>
+
         </div>
     );
 };

@@ -4,6 +4,7 @@ import Card from "./Card/Card";
 import OneProduct from "./OneProduct/OneProduct";
 import Layout from "./Layout";
 import Home from "./Home/Home";
+import AddOneProduct from "./addOneProduct";
 
 const App = () => {
     return (
@@ -14,6 +15,7 @@ const App = () => {
                     <Route path='' element={<Home/>}/>
                 <Route path='card' element={<Card/>}/>
                 <Route path='card/:id' element={<OneProduct/>}/>
+                <Route path='addproduct' element={<AddOneProduct/>}/>
                 </Route>
             </Routes>
 
