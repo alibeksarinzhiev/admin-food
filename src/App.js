@@ -16,6 +16,7 @@ const App = () => {
                 <Route path='card' element={<Card/>}/>
                 <Route path='card/:id' element={<OneProduct/>}/>
                 <Route path='addproduct' element={<AddOneProduct/>}/>
+                <Route path='singleCard/:id' element={<OneProduct/>}/>
                 </Route>
             </Routes>
 
