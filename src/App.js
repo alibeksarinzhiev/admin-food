@@ -2,7 +2,7 @@ import React from 'react';
 import {Route,Routes} from "react-router-dom";
 import Card from "./Card/Card";
 import OneProduct from "./OneProduct/OneProduct";
-import Layout from "./Layout";
+import Layout from "./Layout/Layout";
 import Home from "./Home/Home";
 import AddOneProduct from "./addOneProduct";
 

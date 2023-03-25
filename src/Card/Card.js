@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDeleteProductMutation, useGetProductQuery} from "../redux/product";
 import { Link, useParams } from 'react-router-dom';
-import {useGetProductQuery} from "../redux/product";
 import './card.css'
 
 
@@ -16,7 +15,9 @@ const Card = () => {
     const deleteProduct = (id) =>{deleted(id)}
 
     return (
+        <div className="container">
         <div className='cards'>
+
             {
         data.map((el)=>(
            
@@ -33,6 +34,7 @@ const Card = () => {
 
 }
 </div>
+        </div>
     );
 };
 

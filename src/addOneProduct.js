@@ -23,12 +23,22 @@ const AddOneProduct = () => {
     return (
         <div>
             <form action="" noValidate onSubmit={handleSubmit(postProduct)}>
-                <input type="text" {...register('price',{
+                <input placeholder='Цена' type="text" {...register('price',{
                     required:{
                         message:'заполните поле'
                     }
                 })}/>
-                <input type="text"{...register('image',{
+                <input placeholder='фотография' type="text"{...register('image',{
+                    required:{
+                        message:'заполните поле'
+                    }
+                })}/>
+                <input type="text" placeholder='категория' {...register('category',{
+                    required:{
+                        message:'заполните поле'
+                    }
+                })}/>
+                <input type="text" placeholder='статус' {...register('status',{
                     required:{
                         message:'заполните поле'
                     }

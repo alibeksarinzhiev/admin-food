@@ -1,0 +1,15 @@
+.header__lists{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    column-gap: 50px;
+font-size: 22px;
+
+}
+header{
+
+    padding: 20px 0;
+}
+.li a{
+    color: black;
+}
