@@ -4,6 +4,7 @@ import Card from "./Card/Card";
 import OneProduct from "./OneProduct/OneProduct";
 import Layout from "./Layout";
 import Home from "./Home/Home";
+import AddOneProduct from "./addOneProduct";
 
 const App = () => {
     return (
@@ -11,8 +12,10 @@ const App = () => {
 
             <Routes>
                 <Route path='/' element={<Layout/>}>
-                    <Route path='' element={<Home/>}/>
+                <Route path='' element={<Home/>}/>
                 <Route path='card' element={<Card/>}/>
+                <Route path='card/:id' element={<OneProduct/>}/>
+                <Route path='addproduct' element={<AddOneProduct/>}/>
                 <Route path='singleCard/:id' element={<OneProduct/>}/>
                 </Route>
             </Routes>
