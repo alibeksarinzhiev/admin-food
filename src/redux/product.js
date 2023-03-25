@@ -26,7 +26,13 @@ export const productSlice = createApi({
 
         getOneProduct:build.query({
             query:(id)=> ({url:`product/${id}`})
+        }),
+        deleteProduct:build.mutation({
+            query:(id)=> ({
+                url:`product/${id}`,
+                method: 'DELETE',
+            })
         })
     })
 })
-export const {useGetProductQuery,useChangeProductMutation,useGetOneProductQuery,useAddProductMutation} = productSlice
+export const {useGetProductQuery,useChangeProductMutation,useGetOneProductQuery,useAddProductMutation,useDeleteProductMutation} = productSlice

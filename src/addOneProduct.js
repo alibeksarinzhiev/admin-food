@@ -5,7 +5,7 @@ import {useAddProductMutation} from "./redux/product";
 const AddOneProduct = () => {
 
     const[addProduct] = useAddProductMutation()
-    console.log(addProduct)
+    
     const{
         register,
         reset,
@@ -17,7 +17,7 @@ const AddOneProduct = () => {
     }=useForm({mode:'onBlur'})
 
     const postProduct = (product)=>{
-        console.log(addProduct(product))
+        addProduct(product);
     }
 
     return (
