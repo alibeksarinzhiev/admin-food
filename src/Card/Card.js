@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import {useGetProductQuery} from "../redux/product";
+import './card.css'
 
 const Card = () => {
 
@@ -8,17 +9,24 @@ const Card = () => {
     
     
     return (
+        <div className='cards'>
+            {
         data.map((el)=>(
-            <div className='card'>
+           
+                <div className='card'>
                 <Link to={`/singleCard/${el.id}`}>
                     <img src={el.image} alt=""/>
                 </Link>
                 
-                <h2>{el.price}</h2>
                 <h2>{el.title}</h2>
-            </div>
-        ))
+                <h2>{el.price}</h2>
+            
+                </div>
 
+           
+        ))
+}
+</div>
     );
 };
 
